@@ -31,4 +31,4 @@ RUN npm config set user 0 && npm config set unsafe-perm true && npm install
 ADD estimate-pi-in-parallel_cus.js ./
 ADD execute.sh ./
 ADD run.sh ./
-CMD ./run.sh
+CMD ./execute.sh
