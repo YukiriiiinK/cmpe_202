@@ -8,7 +8,7 @@ RUN apt-get install -y linux-tools-common linux-tools-generic linux-tools-`uname
 RUN apt-get install -y xz-utils
 RUN mkdir /benchmark
 WORKDIR /benchmark
-COPY node-v8.4.0-linux-x64.tar.xz /benchmark/
+#COPY node-v8.4.0-linux-x64.tar.xz /benchmark/
 
 ADD https://nodejs.org/dist/v8.4.0/node-v8.4.0-linux-x64.tar.xz /benchmark/
 RUN tar -xf node-v8.4.0-linux-x64.tar.xz
