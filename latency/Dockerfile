@@ -6,6 +6,12 @@ RUN apt-get update -y \
 RUN apt-get install -y linux-tools-common linux-tools-generic linux-tools-`uname -r` \
   && apt-get install -y python-tk python-pip
 RUN apt-get install -y xz-utils
+
+COPY mn-topo.json ./
+COPY script.sh ./
+COPY execute.sh ./
+COPY time_monitor.py ./
+
 RUN mkdir /benchmark
 WORKDIR /benchmark
 #COPY node-v8.4.0-linux-x64.tar.xz /benchmark/
@@ -24,10 +30,10 @@ RUN npm install -g d3
 RUN npm install -g topojson
 RUN npm install -g d3-scale-chromatic
 
-COPY mn-topo.json ./
-COPY script.sh ./
-COPY execute.sh ./
-COPY time_monitor.py ./
+#COPY mn-topo.json ./
+#COPY script.sh ./
+#COPY execute.sh ./
+#COPY time_monitor.py ./
 
 # run bash to let the container idle
 #CMD bash
